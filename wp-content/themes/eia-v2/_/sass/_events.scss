@@ -1,0 +1,124 @@
+body[class*='-events']{
+	
+	main {
+	
+	@extend %wrapper;
+		
+			> section {
+		@include grid-span(12);
+		
+			@include breakpoint(emCalc(700)){
+				@include grid-span(8);		
+			}
+
+		
+		}
+	
+	}
+	
+	
+	
+}
+
+
+.event-details {
+
+	line-height: 150%;
+	background: #FFF;
+	border-top: 1px #CCC solid;
+	border-bottom: 1px #CCC solid;
+	background: #FFF;
+	padding: 20px;
+	margin-bottom: 30px;
+	@include breakpoint(emCalc(700)){
+		margin-bottom: 45px;
+	}
+
+	@extend %clearfix;
+
+	.featured-image {
+		float: right;
+		margin: 0;
+	}
+	
+	&__date {
+
+		&--start {
+			
+		}
+		
+		&--end {
+			font-style: italic;
+			font-size: emCalc(14);
+			color: #666;
+
+			margin-bottom: 20px;
+			@include breakpoint(emCalc(700)){
+				margin-bottom: 35px;
+			}
+
+
+		}
+		
+	}
+
+
+	&__address {
+		
+	}
+
+	
+}
+
+
+.event-map {
+	float: right;
+}
+
+.event-description
+ {
+	
+			margin-bottom: 20px;
+		@include breakpoint(emCalc(700)){
+			margin-bottom: 35px;
+		}
+
+	
+}
+
+.event-videos {
+	
+	margin-bottom: 30px;
+	@include breakpoint(emCalc(700)){
+		margin-bottom: 45px;
+	}
+	
+}
+
+.event-downloads {
+	background: #FFF;
+	padding: 20px;
+	
+	&__download {
+		margin-bottom: 25px;
+		border-bottom: 1px #CCC dotted;	
+	
+		&:last-child {
+			margin-bottom: 0;
+			border-bottom: 0;
+		}
+		
+	}
+	
+	h4 {
+		margin-bottom: 5px;
+	}
+	
+	a {
+		@include button($eia-blue);
+	}
+	
+}
+
+
+

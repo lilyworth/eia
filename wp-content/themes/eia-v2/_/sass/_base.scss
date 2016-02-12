@@ -1,0 +1,375 @@
+/* Placeholders + Mixins */
+/* http://www.sitepoint.com/sass-mixin-placeholder/ */
+
+@import "compass/css3";
+
+/* -- Variables */
+
+$site-width: 1200px;
+
+/* Colours */
+$eia-blue: #1E9BED;
+$eia-blue-light: lighten($eia-blue,6%);
+$link-color: #1E9BED;
+$link-active-color:#069;
+$orange: #FF9933;
+
+$green: #9ba416;
+
+$font-xlarge: 36px;
+$font-large: 24px;
+$font-medium: 18px;
+$font-regular: 16px;
+$font-small: 12px;
+
+$space: em(25);
+
+$breakpoint--mobile-nav: em(780);
+
+
+h1 {
+	font-size: $font-large;
+	@include breakpoint(em(940)){
+		font-size: $font-xlarge;
+	}
+}
+
+h2 {
+	font-size: $font-medium;
+	@include breakpoint(em(940)){
+		font-size: $font-large;
+	}
+
+}
+
+h3, h4 {
+	font-size: $font-medium;
+}
+
+
+
+/* -- Placehodlers */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+%wrapper {
+	max-width: $site-width;
+	margin: 0 auto;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	@extend %clearfix;
+}
+
+.wrapper {
+	@extend %wrapper;
+}
+
+%stack {
+	padding-top: emCalc(20);
+	border-top: 1px #CCC dotted;
+	margin-bottom: emCalc(20);
+	@extend %clearfix;
+}
+
+
+%naked-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+%visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+%header {
+	margin-top: 0;
+	font-family: 'PT Sans', Arial, sans-serif;
+	line-height: 100%;
+	font-weight: normal;
+}
+
+/* -- Mixins */
+
+
+
+
+/* https://gist.github.com/taupecat/4090271 */
+@mixin modernizr($test) {
+    html.#{$test} & {
+        @content;
+    }
+}
+
+
+
+@mixin button($bg: $orange, $bg-hover: lighten($bg,6%)) {
+	display: inline-block;
+	border-radius: 500px;
+	padding: emCalc(12px) emCalc(24px);
+	color: #FFF;
+	background: $bg;
+	font-weight: 700;
+	@include text-shadow(rgba(darken($bg, 30%), 0.8) 1px 1px 2px);
+	border:0;
+
+	&:hover,&:focus {
+		background: $bg-hover;
+		color: #FFF;
+	}
+
+}
+
+.button {
+	@include button();
+}
+
+.button--blue {
+	@include button($eia-blue);
+}
+
+html {
+/* 	-webkit-font-smoothing: antialiased; */
+overflow-x: hidden;
+}
+
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.chromeframe {position: absolute; top: 0;padding:20px;background: #FFF;color: #666;}
+
+/* -------------------------------------------------------------------------------*/
+
+
+::selection {
+   background: #A7B239; color: #fff; @include text-shadow(rgba(darken(#A7B239, 30%), 0.8) 1px 1px 2px);
+}
+::-moz-selection {
+  background: #A7B239; color: #fff; @include text-shadow(rgba(darken(#A7B239, 30%), 0.8) 1px 1px 2px);
+}
+
+a:link {-webkit-tap-highlight-color: #333;}
+
+a {
+	color: $link-color;
+}
+
+a:hover {
+	color: $link-active-color;
+}
+
+a {
+	@include single-transition(all, .15s, ease, 0);
+}
+
+
+img {
+	max-width:100%;
+	height: auto;
+}
+
+
+
+
+
+/* Work with bottom borders
+================================= */
+#{headings()}, p {
+	margin-top: 0;
+}
+
+
+/* line heights
+================================= */
+
+p {
+	line-height: 150%;
+}
+
+
+
+/* Lists
+================================= */
+
+
+article li {
+	margin-bottom: 12px;
+	line-height: 150%;
+}
+
+
+/* Links
+================================= */
+
+a {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Base style for lists
+================================= */
+
+nav ul {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	// li {
+	// 	float:left;
+
+	// }
+
+}
+
+
+/* Global stuff
+================================= */
+
+
+/* Clearfix */
+.cf { *zoom: 1; }
+.cf:before,
+.cf:after{ content: " "; display: table; }
+.cf:after { clear: both; }
+
+address {
+	font-style: normal;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.note {
+	font-size: em(12);
+	color: #999;
+}
+
+/* file type notes/badges */
+
+[class*='link-']{
+display: inline-block;
+margin-left: 6px;
+padding: 6px 8px;
+background: #FFF;
+font-size: em(8);
+text-transform: uppercase;
+border-radius: 2px;
+font-weight: bold;
+line-height: 100%;
+position: relative;
+bottom: 4px;
+
+	.button & {
+		background: none;
+		background: rgba(255,255,255,0.2);
+		text-shadow: none;
+		color: #FFF;
+	}
+
+}
+
+[class*='-pdf']{
+	color:#C00;
+}
+
+[class*='-doc']{
+	color:#2571c6;
+}
+
+
+
+/* Move everything up so header overlaps image  */
+
+.home.desktop .header-wrapper ~ *,
+.home.tablet .header-wrapper ~ * {
+	position: relative;
+	top:-38px;
+}
+
+
+.home .breadcrumbs,
+body.page-template-donate-php .breadcrumbs {
+	display: none;
+}
+
+
+
+.breadcrumbs {
+
+font-size: em(12);
+margin-bottom: em(15);
+@include breakpoint(em(684)){
+	margin-bottom: em(40);
+	}
+
+
+}
+
+
+
+.video {
+	margin-bottom: emCalc(25);
+}
+
+main {
+	padding-bottom: 30px;
+	@include breakpoint(emCalc(700)){
+		padding-bottom: 60px;
+	}
+}
+
+/* WP image alignment */
+
+.alignright {
+
+	display: block;
+	float:none;
+	margin: 20px 0;
+
+	@include breakpoint(em(540)){
+		display: inline;
+		float: right;
+		margin: 35px 0 35px 35px;
+	}
+}
+
+
+.alignleft {
+
+	display: block;
+	float:none;
+	margin: 20px 0;
+
+	@include breakpoint(em(540)){
+		display: inline;
+		float: left;
+		margin: 35px 35px 35px 0;
+	}
+}
+
+article.post img.alignleft:last-of-type {
+	margin: 0 35px 35px 0;
+}

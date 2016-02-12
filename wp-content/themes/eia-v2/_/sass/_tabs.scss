@@ -1,0 +1,104 @@
+#tabwrap {
+	background: #fff;
+	overflow: hidden;
+	width: 100%;
+
+
+}
+#tabs { /* overflow: hidden; */
+	/* tuck under border below */
+	position: relative;
+	top:1px;
+
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 4px $eia-blue solid;
+
+	li {
+		display: inline-block;
+		margin-bottom: 0;
+
+		font-size: $font-small;
+		@include breakpoint(400px){
+			font-size: $font-regular;
+		}
+
+
+		a {
+		display: block;
+		padding: 8px 12px;
+		background: $green;
+		color: #FFF;
+		position: relative;
+		top: 8px;
+
+			&:hover {
+				background: darken($green, 5%);
+			}
+
+		}
+
+
+		&.current a {
+			background: $eia-blue;
+				pointer-events: none;
+			top: 0;
+					border-bottom: 4px $eia-blue solid;
+					padding: 8px 12px 12px;
+
+
+
+		}
+
+
+	}
+
+}
+
+
+li.single {
+	margin-right: emCalc(10);
+}
+
+
+li.regular {
+
+}
+
+.tab-content {
+	position: relative;
+}
+
+.tab-content .current {
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+
+	-webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+
+
+}
+
+
+
+
+
+.tab-content > div {
+	clear: both;
+	padding: 20px 0;
+	@include breakpoint(em(700)){
+			padding: 50px 0;
+	}
+
+	display: none;
+}
+
+
+
+.tab-content .current { display: block; }
+.tab-content #home.first { display: block; }

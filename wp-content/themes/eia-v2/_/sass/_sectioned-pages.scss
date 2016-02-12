@@ -1,0 +1,28 @@
+.section {
+	
+	@extend %clearfix;
+	@extend %stack;
+
+
+	
+	@include breakpoint(em(480)){
+
+	margin: 20px 0;
+	display: block;	
+
+	img {
+		display: inline;
+		float:right;
+		margin: 25px;
+	}
+
+
+	}
+	
+
+	
+	a.read-more {
+		@include button($eia-blue);
+	}
+
+}

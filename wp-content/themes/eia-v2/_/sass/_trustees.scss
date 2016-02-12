@@ -1,0 +1,34 @@
+.trustees {
+	
+	
+	
+	@include block-grid(2);
+	
+	border-top: 1px #CCC solid;
+	margin-top: 25px;
+	padding-top:25px;
+	
+	img {
+		@include grid-span(4);
+	}
+	
+	&__info {
+		@include grid-span(8,5);		
+	}	
+	
+	img {
+		border-radius: 50%;
+	}
+	
+	h2 {
+		margin-bottom: em(5);
+		font-size: $font-large;
+	}
+	
+	h3 {
+		font-size: $font-small;
+		color:#666;
+		font-family: Arial, sans-serif;
+	}
+	
+}

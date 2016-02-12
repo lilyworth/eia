@@ -1,0 +1,218 @@
+.header-wrapper {
+background-color: transparent;
+background-image: url('../img/leaf-bg.png');
+background-position: center bottom;
+-webkit-background-size: cover;
+background-size: cover;
+position: relative;
+z-index: 10;
+
+}
+
+header[role="banner"] {
+/* ------------------------------ */
+
+
+/*
+*/
+
+@extend %wrapper;
+
+padding-top: em(10);
+padding-bottom: em(10);
+
+
+@include breakpoint(em(350)){
+padding-top: em(20);
+padding-bottom: em(20);
+}
+
+
+@include breakpoint(em(818)){
+padding-top: em(40);
+padding-bottom: em(40);
+}
+
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: right;
+			
+			
+			li {
+				display: inline-block;
+				margin-right: 2%;
+				font-size: emCalc(14);
+				font-weight: bold;
+				color: #FFF;
+			}
+			
+			li:last-child {
+				margin-right: 0;
+			}
+		}
+
+
+		a {
+			color: #FFF;
+			&:hover {
+				color:#FFF;
+			}
+		}
+
+
+
+
+/* ------------------------------ */
+}
+
+.top-strip {
+/* ------------------------------ */	
+	
+		@extend %wrapper;
+		padding-top: emCalc(20);
+		padding-bottom: emCalc(40);
+		color: #FFF;
+	
+				
+		
+		
+		
+/* ------------------------------ */
+}
+
+
+.logo {
+/* ------------------------------------------- */	
+	
+	@include grid-span(2,1);		
+	z-index:1;
+
+	img {
+		z-index: 6;	
+		position: absolute;
+
+			width: 24%;	
+			top: -18%;
+			left: -1%;
+		
+		@include breakpoint(em(350)){
+			top:-5%;
+		}
+		
+		
+		
+		@include breakpoint(em(400)){
+			top:-11%;
+		}
+		
+		
+		@include breakpoint(em(488)){
+			width: 18%;	
+			top:-14px;
+			left:auto;
+
+		}
+		
+		@include breakpoint(em(675)){
+			top:-22px;
+			left:auto;
+		}
+		
+		
+		/* at 818px - the padding on the header drops */
+		
+		
+		
+
+		@include breakpoint(emCalc(970)){
+				top: -46px;
+				width: 210px;
+				left:auto;
+			}		
+	}
+
+/* ------------------------------------------- */
+}
+
+@include breakpoint(em(1120)){
+
+	.home .logo img {
+		width: auto;
+	}
+
+}
+
+
+
+
+.header__title {
+
+	h1{
+		color: #FFF;
+		@include text-shadow(rgba(darken(#465001, 10%), 0.8) 1px 1px 2px);
+
+		font-size: $font-small;
+		line-height: 130%;
+
+		@include breakpoint(em(350)){
+			font-size: $font-regular;
+		}
+
+		
+		@include breakpoint(em(400)){
+		font-size: $font-medium;
+		}
+		
+		@include breakpoint(em(610)){
+			font-size: $font-large;
+		}
+		
+		/* Trying to always keep title spread over 2 lines */ 		
+		/* @include breakpoint(em(560) em(970)){ */
+			
+	width: 70%;
+			
+			@include breakpoint(em(430)){
+			width:95%;
+			}
+
+			@include breakpoint(em(500)){
+				width: 78%;
+			}
+			
+			
+			max-width: 290px;			
+		/* } */
+		
+
+
+	}
+
+	@include grid-span(8,4);
+	
+
+	/*
+@include breakpoint(emCalc(970)){
+		@include grid-span(4,4);		
+	}
+	
+*/
+
+	
+}
+
+.contact {
+/* ------------------------------ */
+	
+	@include breakpoint(emCalc(767)){
+		@include grid-span(4,9);		
+	}
+	
+
+
+/* ------------------------------ */
+	
+}

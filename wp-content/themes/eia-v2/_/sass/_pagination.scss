@@ -1,0 +1,43 @@
+/* Pagination */
+	.page-numbers {
+	display: inline-block;
+	margin-right: 3px;
+	padding: 10px;
+	background: $eia-blue;
+	color: #FFF;
+	
+	@include breakpoint(max-width emCalc(600)){
+		margin-bottom: 50px;
+	}
+	
+		
+		&:hover {		
+		background: $link-active-color;
+		color:#FFF;
+		}
+
+		&.current {
+			background: transparent;
+			color: #111;
+			
+		}	
+
+		
+	}
+
+.dots {
+			background: transparent;
+			color: #111;
+			&:hover {
+						background: transparent;
+						color: #111;				
+			}
+		}
+
+
+.pagination {
+	
+	padding: 20px;
+	border-top: 1px #CCC dotted;
+	
+}

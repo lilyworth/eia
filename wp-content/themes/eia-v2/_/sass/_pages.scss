@@ -1,0 +1,68 @@
+.page main,
+.single-post main,
+.single main,
+.search main {
+	@extend %wrapper;
+
+	> section {
+
+	@include grid-span(12);
+
+	/* resize sidebar  */
+	@include breakpoint(emCalc(700)){
+			@include grid-span(7);
+	}
+
+	/* go full-size */
+	@include breakpoint(emCalc(1010)){
+			@include grid-span(8);
+	}
+
+		h1 {
+			font-size: emCalc(32);
+		}
+
+		h2 {
+			line-height: 150%;
+		}
+
+	}
+
+}
+
+
+.banner {
+
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 200px;
+	position: relative;
+	margin-bottom: 30px;
+	border-radius: 3px;
+
+	> div {
+		@extend %wrapper;
+	}
+
+
+	&__title {
+		color: #FFF;
+		background: rgba(0, 0, 0, 0.5);
+		@include text-shadow(rgba(0,0,0,0.8) 1px 1px 2px);
+		display: inline-block;
+		padding: 15px 18px;
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+		margin: 0;
+		border-radius: 3px;
+	}
+
+}
+
+
+body.page-template-page-our_work-php .banner {
+	background-image: url('../img/slide_forests.jpg');
+}

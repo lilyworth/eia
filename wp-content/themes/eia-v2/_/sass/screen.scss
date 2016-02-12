@@ -1,0 +1,197 @@
+@import 'compass/css3';
+
+/*  Singularity / Breakpoint (installed via bower)
+  -------------------------------------------------------- */
+@import "../../_/bower/sassy-maps/sass/sassy-maps";
+@import "../../_/bower/breakpoint-sass/stylesheets/breakpoint";
+@import "../../_/bower/singularity/stylesheets/singularitygs";
+@import "../../_/bower/bourbon/dist/bourbon";
+
+// think in pixels - output in ems
+@import "emCalc";
+
+
+//Global Foundation Settings
+@import "settings";
+@import "normalize";
+
+
+
+/* Base styles */
+@import "base";
+@import "forms";
+
+/*
+@import "genericons";
+@import "monosocialicons";
+*/
+
+/* Overlays */
+@import "magnific";
+
+/* Foundation's block grid */
+@import "block-grid";
+
+
+@include add-grid(12); /* Mobile first */
+/* @include add-grid(12 at emCalc(700)); */
+/*
+@include add-grid(9 at 40em);
+@include add-grid(12 at 50em);
+*/
+
+
+@include add-gutter(0.5);
+
+
+
+
+/* Basics
+---------------------------------- */
+
+/*
+body.home,
+html.home {
+	height: 100%;
+}
+*/
+
+html {
+background: #f1f1f1 url('../img/bg-pattern-1.jpg');
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 100%;
+	color: #333;
+}
+
+main {
+	margin-bottom: emCalc(100);
+}
+
+#{headings()}  {
+@extend %header;
+    }
+
+.sub-header {
+	margin-bottom: emCalc(40);
+}
+
+
+/* Global view all link */
+
+[class*='view-all'] {
+	margin-top: emCalc(30);
+	font-weight: 700;
+	display: block;
+	text-align: right;
+	@include button($eia-blue);
+
+	&:hover i {
+		position: relative;
+		left:2px;
+	}
+}
+
+
+/*
+
+Target awkward size tablet screen e.g. Nexus 7 + shallow screens
+(min-width emCalc(400))
+*/
+
+/*
+@include breakpoint(emCalc(400)) ){
+
+
+
+}
+*/
+
+
+/* /////// Breakpoint syntax */
+
+
+/*
+@include breakpoint($breakpoint-small-up){
+	.header-strip {
+		margin-bottom: 30px;
+	}
+
+
+}
+*/
+
+.facebook-box iframe {
+	width: 100% !important;
+}
+
+/* Cookie notice
+----------------------------------------------- */
+@import "cookie-notice";
+
+/* Icons
+----------------------------------------------- */
+@import "icons";
+
+/* Top Strip
+----------------------------------------------- */
+@import "header";
+
+
+/* Nav
+----------------------------------------------- */
+@import "nav";
+
+
+/* Home: Misc things specific to homepage
+----------------------------------------------- */
+@import "home";
+
+/* Home: intro section
+----------------------------------------------- */
+@import "home-intro";
+
+
+/* Donate buttons
+----------------------------------------------- */
+@import "donate";
+
+
+/* Home: Slider
+----------------------------------------------- */
+@import "slider";
+
+/* Generic page styles
+----------------------------------------------- */
+@import "pages";
+@import "tabs";
+@import "downloads";
+
+@import "post";
+@import "events";
+@import "landing-pages";
+@import "sectioned-pages";
+@import "custom-template";
+@import "our-work";
+@import "summary";
+@import "reports";
+@import "post-listings";
+@import "pagination";
+@import "sidebar";
+@import "footer";
+@import "social";
+@import "trustees";
+@import "videos";
+@import "photos";
+@import "get-involved";
+
+
+/* IE fixes
+--------------------------------------- */
+
+.ie8 {
+
+
+}

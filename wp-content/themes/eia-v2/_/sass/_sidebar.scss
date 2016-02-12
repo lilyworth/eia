@@ -1,0 +1,127 @@
+body.home .sidebar {
+
+	/* Overlap but not until clear of main navigation */
+	@include breakpoint(em(1010)){
+		position: relative;
+		top:-190px;
+		z-index: 12;
+
+	}
+}
+
+
+
+.home .sidebar {
+/* ------------------------------------------- */
+
+	@include grid-span(12);
+
+	/* resize sidebar and new layout for video */
+	@include breakpoint(emCalc(830)){
+		@include grid-span(4,9);
+	}
+
+	/* go full-size */
+	@include breakpoint(emCalc(1010)){
+		@include grid-span(3,10);
+	}
+
+
+
+/* ------------------------------------------- */
+}
+
+
+.sidebar {
+/* ------------------------------------------- */
+
+	@include grid-span(12);
+
+	@include breakpoint(emCalc(700)){
+		@include grid-span(4,9);
+	}
+
+
+	@include breakpoint(emCalc(1010)){
+		@include grid-span(3,10);
+	}
+
+
+
+/* ------------------------------------------- */
+}
+
+
+
+
+
+
+.subscribe {
+/* ------------------------------------------- */
+
+@extend %stack;
+
+	text-align: center;
+
+	a {
+		@include button($eia-blue);
+	}
+
+
+
+/* ------------------------------------------- */
+}
+
+[class*="-box"] {
+	@extend %stack;
+}
+
+.home .sidebar {
+	padding-top: 13px;
+
+	background: url('../img/blue-border-top.png') left top repeat-x;
+	}
+
+/* ------------------------------------------- */
+
+
+
+
+
+
+
+.facebook-box {
+/* ------------------------------------------- */
+
+
+padding: emCalc(20);
+background: #FFF;
+
+.cff-post-text {
+	font-size: emCalc(12);
+}
+
+/* ------------------------------------------- */
+
+}
+
+
+.sidebar {
+
+	form[role="search"] {
+		margin-bottom: $space;
+		@include breakpoint(em(700)){
+			margin-bottom: $space*2;
+		}
+
+	}
+
+
+}
+
+
+.sidenav {
+	ul + ul {
+		margin-top: $space*2;
+	}
+}

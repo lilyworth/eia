@@ -1,0 +1,85 @@
+.landing-page-intro {
+	
+	font-size: emCalc(20);
+	border-bottom: 1px #CCC solid;
+	margin-bottom: 25px;
+	
+}
+
+
+
+
+.landing-page-header {
+	min-height: 290px;
+	position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-bottom: 20px;
+	@include border-radius(3px);
+}
+
+
+
+.landing-page-header__caption {
+	position:absolute;
+	width: 70%;
+	left:20px;
+	bottom: 20px;
+	color:#FFF; 
+	padding: 20px;
+	background: #111;
+	background: rgba(0,0,0,0.5);
+	@include border-radius(3px);
+	
+	
+	
+	
+	
+	h2 {
+		margin-bottom: 0;
+		@include text-shadow(rgba(0,0,0, 0.8) 1px 1px 2px);
+
+	}
+	
+
+}
+
+.landing-page-content {
+	margin-bottom: 30px;
+}
+
+.find-out-more {
+	
+	h2 {
+		padding-bottom: 15px;
+		border-bottom: 1px #CCC dotted;
+	}
+	
+	li {
+		margin-bottom: 12px;
+	}
+	
+}
+
+
+/* Find out more links */
+
+.find-out-more {
+	background: #FFF;
+	padding: 20px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow:    0px 2px 7px 0px rgba(0,0,0,0.1);
+	box-shadow:         0px 2px 7px 0px rgba(0,0,0,0.1);
+	/* color the bullets */
+	ul {
+		color: #666;	
+	}
+	
+	li {
+		margin-bottom: 20px;
+	}
+	
+}

@@ -1,0 +1,151 @@
+[class*='custom-template--']{
+/* --------------------------------------------------- */
+
+  .breadcrumbs {
+    display: none;
+  }
+
+  main .wrapper {
+    text-align: left;
+    max-width: 950px
+  }
+
+/*   .wrapper--embed {
+  text-align: center;
+}
+ */
+
+
+  nav[role="navigation"]{
+    z-index: 1;
+  }
+
+  main {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  top:-50px;
+
+    article {
+      text-align: center;
+    }
+
+  }
+
+  .masthead {
+/* -------------------------- */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+    position: relative;
+    /* margin-bottom: $space; */
+
+    &:before{
+      	content: "";
+      	display: block;
+      	padding-top: 30%; 	/* initial ratio of 1:1*/
+    }
+
+    &__gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+  /*     background-color: rgba(0,0,0,0);
+  background: @include filter-gradient(#000000, #000000, vertical);
+  background: @include background-image(linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 63%, rgba(0,0,0,0.6) 100%));
+   */
+      @include linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 63%, rgba(0,0,0,0.6) 100%);
+    }
+
+    &__title {
+
+      h1 {margin-bottom: 5px;}
+      h2 {margin: 0;}
+
+      text-align: right;
+      padding-bottom: $space;
+      color: #FFF;
+      @include text-shadow(rgba(0,0,0, 0.8) 1px 1px 2px);
+    }
+/* -------------------------- */
+  }
+
+.embed {
+      margin: $space auto $space auto;
+}
+
+  .wrapper--embed .embed {
+    //max-width: 800px;
+
+  }
+
+.image {
+  margin: $space 0 $space auto;
+}
+.image--large {
+
+        text-align: center;
+
+       img {
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+      }
+}
+
+.text-block {
+
+  padding-top: $space;
+  margin-top: $space;
+  border-top: 1px #CCC dotted;
+
+}
+
+.note {
+  margin-top: $space/2;
+}
+
+.caption .note {
+  text-align: center;
+  margin-top: $space;
+}
+
+/* --------------------------------------------------- */
+}
+
+.share-bar-wrapper {
+  padding: $space/2 0;
+  background: #FFF;
+}
+
+
+.share-bar__donate {
+  @include button();
+  float: right;
+}
+
+.share-bar__share-list  {
+  display: none;
+  @include breakpoint(em(500)){
+			display: block;
+	}
+  @extend %naked-list;
+  li {
+    float: left;
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  i {
+    font-size: 28px;
+    position: relative;
+    top:4px;
+  }
+
+}

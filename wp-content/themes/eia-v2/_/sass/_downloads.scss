@@ -1,0 +1,19 @@
+.downloads {
+  padding: $space;
+  background: rgba(255,255,255,0.4);
+  border-top: 1px #CCC dotted;
+  border-bottom: 1px #CCC dotted;
+  margin: $space 0;
+
+  @include breakpoint(em(600)){
+      width: 80%;
+  }
+
+  /* ul {
+    @extend %naked-list;
+  } */
+
+
+
+
+}

@@ -1,0 +1,76 @@
+/* Misc stuff for homepage */
+
+.home-panels {
+	@extend %wrapper;
+}
+
+
+
+.statement {
+
+/* ------------------------------------------- */
+
+	color:#FFF;
+	
+	/* background: rgba(255,255,255,0.6); */
+	padding: 0 0 13px 0;
+	@include text-shadow(rgba(darken($eia-blue, 30%), 0.8) 1px 1px 2px);
+	
+	background: url('../img/blue-border-bottom.png') center bottom repeat-x;
+	
+	> div {
+		background: $eia-blue;
+		padding: emCalc(15) emCalc(20) emCalc(25) emCalc(20);
+	}
+	
+	/*
+	
+	width: 45%;
+	
+position: absolute;
+	top: -130px;
+	right: 0;
+*/
+	
+	h1 {
+		font-size: emCalc(24);
+		line-height: 150%;
+	}	
+	
+	a {
+		font-weight: bold;
+		color: #FFF;
+	}
+	
+/* ------------------------------------------- */	
+}
+
+
+body.home .summary {
+/* ------------------------------------------- */	
+	
+	@include grid-span(12);	
+	margin-bottom: $space*2;
+	
+	@include breakpoint(emCalc(638)){
+		@include grid-span(6);		
+	}
+	
+	/* resize sidebar and new layout for video */
+	@include breakpoint(emCalc(830)){
+		@include grid-span(3);		
+	}
+
+	/* go full-size */
+	@include breakpoint(emCalc(1010)){
+		@include grid-span(3);		
+	}
+
+	
+
+
+/* ------------------------------------------- */	
+}
+
+
+

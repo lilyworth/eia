@@ -1,0 +1,106 @@
+.page-template-page-get-involved-template-php {
+
+  .banner {
+    background-image: url('../img/header--get-involved.jpg');
+  }
+
+  article > h1 {
+    text-align: center;
+    margin-bottom: $space;
+  }
+
+}
+
+.get-involved {
+
+  @include block-grid(1);
+  @include breakpoint(em(400)){
+    @include block-grid(2);
+	}
+
+  @include breakpoint(em(1040)){
+    @include block-grid(3);
+	}
+
+ li svg {
+   display: block;
+   margin: 8px auto;
+ }
+
+  li a {
+    display: block;
+    /* padding: 85px 8px 8px 8px; */
+  padding: 8px;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: center 15px;
+    text-align: center;
+    font-size: $font-medium;
+    font-family: 'PT Sans', Arial, sans-serif;
+    color: #333;
+    //@include text-shadow(rgba(darken($eia-blue, 30%), 0.8) 1px 1px 2px);
+
+  /*   background-size: 56px auto; */
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $eia-blue;
+      color: #FFF;
+      svg g > * {
+        stroke: #FFF;
+      }
+
+    }
+
+  }
+
+
+  &__donate {
+    svg g > * {
+      stroke: $eia-blue;
+    }
+  //background-color: $eia-blue;
+}
+
+&__legacy  {
+  svg g > * {
+    stroke: #ffa800;
+  }
+  //background-color: shade(#ffa800, 5%);
+}
+
+&__partnerships {
+  svg g > * {
+    stroke: #d85080;
+  }
+  //background-color: #d85080;
+}
+
+&__events {
+  svg g > * {
+    stroke: #83b46d;
+  }
+
+//  background-color: #83b46d;
+}
+
+&__organise {
+  svg g > * {
+    stroke: #9e65a6;
+  }
+
+//  background-color: #9e65a6;
+}
+
+&__volunteer {
+  svg g > * {
+    stroke: #3399cc;
+  }
+
+//  background-color: #3399cc;
+}
+
+
+
+
+}

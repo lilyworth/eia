@@ -1,0 +1,48 @@
+@import 'compass/css3';
+
+/* @import "breakpoint"; */
+
+
+
+
+/* Breakpoints */
+$breakpoint-small-up: emCalc(100px);
+$breakpoint-medium-up: emCalc(750px);
+
+$base-font-size: 100% !default;
+$base-line-height: 100%;
+$default-float: left;
+$include-html-classes: true;
+
+
+
+
+
+$small-screen: $breakpoint-medium-up;
+// $medium-screen: 1280px;
+// $large-screen: 1440px;
+
+// $screen: "only screen";
+// $small: "only screen and (min-width: #{$small-screen})";
+// $medium: "only screen and (min-width: #{$medium-screen})";
+// $large: "only screen and (min-width: #{$large-screen})";
+// $landscape: "only screen and (orientation: landscape)";
+// $portrait: "only screen and (orientation: portrait)";
+
+
+//
+// Grid Variables
+//
+
+$row-width: emCalc(1400);
+$column-gutter: emCalc(50);
+$total-columns: 12;
+
+//
+// Block Grid Variables
+//
+
+// We use this to control the maximum number of block grid elements per row
+
+$block-grid-elements: 12;
+$block-grid-default-spacing: emCalc(20);

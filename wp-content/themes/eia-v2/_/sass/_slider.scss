@@ -1,0 +1,436 @@
+/* Flexslider
+----------------------------------------------- */
+/* == Flexslider */
+
+/* Browser Resets */
+/*
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+*/
+
+/* Browser Resets
+*********************************/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* Icon Fonts
+*********************************/
+/* Font-face Icons */
+@font-face {
+	font-family: 'flexslider-icon';
+	src:url('//cdn.jsdelivr.net/flexslider/2.2/fonts/flexslider-icon.eot');
+	src:url('//cdn.jsdelivr.net/flexslider/2.2/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+		url('//cdn.jsdelivr.net/flexslider/2.2/fonts/flexslider-icon.woff') format('woff'),
+		url('//cdn.jsdelivr.net/flexslider/2.2/fonts/flexslider-icon.ttf') format('truetype'),
+		url('//cdn.jsdelivr.net/flexslider/2.2/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0; overflow: hidden}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+
+// show first childs whilst loading
+.flexslider .slides > li:first-child {display: block; -webkit-backface-visibility: visible;}
+
+
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { margin: 0; background: #fff;  position: relative; zoom: 1; }
+.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+.flex-direction-nav a  { display: block; width: 40px; height: 40px; margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(255,255,255,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
+.flex-direction-nav .flex-prev { left: -50px; }
+.flex-direction-nav .flex-next { right: -50px; text-align: right; }
+.flexslider:hover .flex-prev { opacity: 0.7; left: 10px; }
+.flexslider:hover .flex-next { opacity: 0.7; right: 10px; }
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
+.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+.flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; display: inline-block; content: '\f001'; }
+.flex-direction-nav a.flex-next:before  { content: '\f002'; }
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: 30px; text-align: center;z-index: 10}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #CCC; background: rgba(255,255,255,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
+.flex-control-paging li a:hover { background: #FFF; background: rgba(255,255,255,0.7); }
+.flex-control-paging li a.flex-active { background: #999; background: rgba(255,255,255,0.9); cursor: default; }
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
+ul.slides li {
+	display: none;
+	position: relative;
+
+
+	height: 380px;
+
+
+
+	@include breakpoint(em(700)){
+		height: 420px;
+	}
+
+
+	@include breakpoint(em(930)){
+		height: 450px;
+	}
+
+
+
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	padding: emCalc(40) 0;
+
+	> span {
+		display: block;
+		@extend %wrapper;
+		height: 100%;
+	}
+}
+
+
+
+ul.slides li.slide--marathon {
+	background-image: url('../img/slide_marathon15-2.jpg?76');
+	background-position: center 20%;
+}
+
+
+.slide--forests {
+	background-image: url('../img/slide_forests.jpg');
+}
+
+.slide--tigers {
+	background-image: url('../img/slide_tigers.jpg');
+}
+
+.slide--elephants {
+	background-image: url('../img/slide_elephants.jpg');
+}
+
+.slide--cetaceans {
+	background-image: url('../img/slide_cetaceans.jpg');
+}
+
+.slide--global {
+	background-image: url('../img/slide_global.jpg');
+}
+
+
+.slide--training {
+	background-image: url('../img/slide_training.jpg?3');
+}
+
+
+
+.slide__work-overview__subtitle {
+	display: none;
+	@include breakpoint(em(755)){
+		display: block;
+	}
+	text-transform: uppercase;
+	font-size: $font-small;
+
+	.seperator {
+		margin:0 emCalc(8);
+	}
+
+}
+
+
+
+.slide__work-overview {
+
+/* Widths */
+
+width: 73%;
+
+@include breakpoint(em(525)){
+	width:63%;
+}
+
+@include breakpoint(em(725)){
+	width:53%;
+}
+
+@include breakpoint(em(940)){
+	width:38%;
+}
+
+/* Position from top */
+
+top:20px;
+
+@include breakpoint(em(430)){
+	top:40px;
+	}
+
+@include breakpoint(em(700)){
+	top:75px;
+}
+
+
+
+padding: 20px;
+@include border-radius(3px);
+background: rgba(0,0,0,0.5);
+color:#FFF;
+position: absolute;
+
+left: 40px;
+line-height: 150%;
+@include text-shadow(rgba(0,0,0,0.8) 1px 1px 2px);
+
+	h2 {
+		margin: 0 0 em(5) 0;
+
+		font-size: $font-medium;
+		@include breakpoint(em(793)){
+			font-size: $font-large;
+		}
+
+
+	}
+
+	&__description {
+		margin: 0 0 emCalc(15) 0;
+	}
+
+
+	&__latest-article {
+		padding-top: emCalc(15);
+		border-top: 1px #999 dotted;
+	}
+
+
+	&__latest-article__date-posted {
+		font-size: emCalc(12);
+		margin-bottom: emCalc(5);
+		color: #CCC;
+		display: block;
+		line-height: 1;
+
+		i {
+			color: #EEE;
+			margin-right: 4px;
+		}
+	}
+
+	&__latest-article__title {
+		margin-bottom: em(10);
+	}
+
+	&__latest-article__more-link h3 {
+		color: lighten($eia-blue,20%);
+
+		&:hover {
+			color: #FFF;
+		}
+
+	}
+
+}
+
+
+
+.slide-controls-wrapper {
+	z-index: 2;
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	background: rgba(255,255,255,0.7);
+	padding: 0;
+	line-height: 150%;
+
+	h1, ol, li {
+		display: inline-block;
+	}
+
+	li {
+		padding: 12px;
+		/* color:darken(#666, 5%); */
+		font-size: emCalc(16);
+		font-weight: bold;
+
+		&:hover {
+			background: rgba(255,255,255,0.5);
+			color:#333;
+		}
+
+		&.flex-active{
+		background: #FFF;
+		color: $eia-blue;
+		position: relative;
+
+		border-bottom: 4px $eia-blue solid;
+		padding: 12px 12px 8px 12px;
+
+			&:after {
+				bottom: 100%;
+				left: 50%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				border-color: rgba(255, 255, 255, 0);
+				border-bottom-color: #FFFFFF;
+				border-width: 10px;
+				margin-left: -10px;
+			}
+
+		}
+
+	}
+
+	li:last-child {
+		margin-right: 0;
+	}
+
+	h1 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: emCalc(11);
+		margin: 0 10px 0 0;
+		font-weight: normal;
+		margin-right: 10px;
+		text-transform: uppercase;
+	}
+
+	ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li:hover {
+		cursor: pointer;
+	}
+
+	span {
+		display: block;
+		@extend %wrapper;
+	}
+
+}
+
+/*
+.flex-direction-nav {
+	display: none;
+}
+*/
+.flex-direction-nav a  {
+    line-height: 40px;
+}
+
+
+
+
+/* .flexslider .slides > li:first-child {display: block !important; -webkit-backface-visibility: visible !important;} */
+
+/* Our work slider */
+
+body[class*='our_work'] {
+
+	.slide__work-overview {
+		left: 35%;
+	}
+
+}
+
+a.slide__work-overview__more-link {
+		@include button($bg: $eia-blue);
+	}
+
+
+.our-work-slider__intro-control {
+	position: absolute;
+	top:0;
+	left:8%;
+	z-index: 2;
+	color:#FFF;
+	background: rgba(0,0,0,0.5);
+	width:26%;
+	min-width: 362px;
+	height: 100%;
+	padding: 110px 20px 0 20px;
+}
+
+.slider-control {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slider-control__control {
+	background: $eia-blue;
+	color: #FFF;
+	padding: 15px;
+	margin-bottom: 4px;
+	border-radius: 4px;
+	position: relative;
+
+}
+
+
+.slider-control__control:hover {
+	cursor: pointer;
+	background: lighten($eia-blue, 6%);
+}
+
+
+.slider-control__control.flex-active {
+	background: lighten($eia-blue, 6%);
+
+	&:after {
+		left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(58, 168, 239, 0);
+	border-left-color: #3aa8ef;
+	border-width: 12px;
+	margin-top: -12px;
+	}
+
+
+}

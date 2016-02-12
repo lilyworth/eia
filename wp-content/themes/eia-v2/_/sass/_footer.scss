@@ -1,0 +1,87 @@
+.home.desktop .footer-wrapper,
+.home.tablet .footer-wrapper {
+top:0;
+}
+
+
+.footer-wrapper {
+background-color: #A7B239;
+@include breakpoint(em(835)){
+	background-color: transparent;
+background-image: url('../img/footer-bg.png?2');
+background-position: top left;
+background-repeat: no-repeat;
+background-size: cover;
+}
+padding-top: 30px;
+	}
+
+footer[role='contentinfo'] {
+
+//logo
+	img {
+		display: block;
+		margin-bottom: $space/2;
+		width: 50px;
+	}
+
+	color: #FFF;
+	@include text-shadow(rgba(darken(#A7B239, 30%), 0.8) 1px 1px 2px);
+
+	ul {
+		@extend %naked-list;
+	}
+
+	a {
+		color: #FFF;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&[href*='-global']{
+			text-decoration: underline;
+		}
+	}
+
+	> div {
+		@extend %wrapper;
+		padding-top: em(40);
+		padding-bottom: em(25);
+	}
+
+
+	nav {
+		@extend %wrapper;
+		padding-top: 30px;
+
+		> ul > li {
+
+			margin-bottom: $space;
+			@include breakpoint(em(835)){
+			width: 18%;
+			margin-bottom: 0;
+			margin-right: 2%;
+			float:left;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			}
+
+		}
+
+		ul li li {
+
+					display: block;
+					margin-bottom: $space/2;
+
+
+			a {
+				color: #FFF;
+			}
+		}
+	}
+
+
+}

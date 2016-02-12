@@ -1,0 +1,95 @@
+/*
+.our-work-intro {
+
+
+
+
+	@extend %clearfix;
+
+	@include block-grid(1);
+	@include breakpoint(emCalc(600)){
+		@include block-grid(3);
+	}
+
+
+	display: none !important;
+
+}
+
+
+.our-work-intro__work-area {
+
+	text-align: center;
+
+
+
+	img {
+		margin-bottom: emCalc(10);
+		display: block;
+		padding-top: emCalc(10);
+	}
+
+}
+*/
+
+
+.our-work-overview {
+	list-style: none;
+	margin: 0 0 40px 0;
+	padding: 0;
+}
+
+.our-work-overview__work-area {
+	min-height: 290px;
+	position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-bottom: 10px;
+	@include border-radius(3px);
+
+	a:hover .our-work-overview__work-area__caption {
+		background: rgba(0,0,0,0.8);
+	}
+}
+
+.our-work-overview__work-area__caption {
+	position:absolute;
+	width: 86%;
+	@include breakpoint(em(872)){
+		width: 70%;
+	}
+	left:20px;
+	bottom: 20px;
+	color:#FFF;
+	padding: 20px;
+	background: #111;
+	background: rgba(0,0,0,0.5);
+	@include border-radius(3px);
+
+
+
+
+
+	h2 {
+		margin-bottom: 8px;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.our-work-overview__work-area--crime {
+	background-image: url('../img/our-work__crime2.jpg');
+}
+
+
+.our-work-overview__work-area--biodiversity {
+	background-image: url('../img/our-work__bio.jpg');
+}
+
+.our-work-overview__work-area--climate {
+	background-image: url('../img/our-work__climate.jpg');
+}

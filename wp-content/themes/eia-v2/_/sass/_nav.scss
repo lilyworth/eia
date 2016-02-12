@@ -1,0 +1,355 @@
+nav[role="navigation"] {
+/* ------------------------------------------- */
+
+
+	position: relative;
+
+	ul {
+		/* Use this is go for bigger logo */
+		/* @include grid-span(8,4); */
+
+		@include grid-span(12);
+
+		/* Move left to compensate for padding */
+		// position: relative;
+		// right: emCalc(15);
+
+	}
+
+
+	li {
+		margin-right: 0;
+		padding-right: 0;
+		display: inline-block;
+		float: none;
+		font-family: 'PT Sans', Arial, sans-serif;
+		font-size: 18px;
+
+	}
+
+	a {
+		display: inline-block;
+		padding: em(15);
+	}
+
+
+
+
+	margin-bottom: em(25);
+	@include breakpoint($breakpoint--mobile-nav){
+			margin-bottom: em(50);
+	}
+
+	background: #FFF;
+/* 	padding: emCalc(15) 0; */
+
+
+
+
+/* ------------------------------------------- */
+}
+
+.home nav[role="navigation"]{
+	ul {
+		@include grid-span(12);
+	}
+}
+
+
+
+.nav-border {
+	@include breakpoint($breakpoint--mobile-nav){
+	position: absolute;
+	height: 26px;
+	display: block;
+	width: 100%;
+	}
+}
+
+.home.desktop .nav-border,
+.home.tablet .nav-border {
+	z-index: 11;
+}
+
+.nav-border--top {
+	@include breakpoint($breakpoint--mobile-nav){
+		top:-26px;
+		background: #FFF;
+	}
+}
+
+.home .nav-border--top {
+	@include breakpoint($breakpoint--mobile-nav){
+		background: url('../img/white-border-top.png') left top repeat-x;
+	}
+}
+
+.nav-border--bottom {
+
+@include breakpoint($breakpoint--mobile-nav){
+		bottom:-26px;
+		background: url('../img/white-border-bottom.png') left top repeat-x;
+
+	}
+}
+
+
+/* ------------------------------------------- */
+/* Side bar nav */
+/* ------------------------------------------- */
+
+
+.sidenav {
+	margin-bottom: $space*2;
+}
+
+
+
+
+.sidenav ul {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	line-height: 150%;
+
+	a {
+
+		display: block;
+		padding: 20px;
+		border-bottom: 1px #CCC solid;
+
+		&:hover {
+			background: #FFF;
+		}
+
+	}
+
+
+}
+
+
+.sidenav ul.menu > li > ul {
+	border-top: 1px #CCC solid;
+}
+
+
+.sidebar__nav__title {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	color: #666;
+	text-transform: uppercase;
+}
+
+
+ul.menu h3 {
+
+
+}
+
+
+/* Active states */
+
+
+li.pagenav > ul {
+
+	> li.current_page_item > a {
+		font-weight: bold;
+	}
+
+}
+
+.current_page_ancestor > a {
+	font-weight: bold;
+}
+
+
+.current_page_item > a {
+	background: #FFF;
+	color: #069;
+}
+
+
+
+
+ul.children li a
+ {
+	padding: 20px 20px 20px 40px;
+}
+
+ul.children ul.children li a {
+	padding: 20px 20px 20px 60px;
+}
+
+
+
+/* Show / hide the right stuff */
+
+ul.children {
+	display: none;
+}
+
+.page_item_has_children.current_page_item ul,
+.current_page_ancestor ul {
+	display: block;
+}
+
+
+/* Animate sidenav in */
+
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.sidenav {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-delay: .65s; /* Chrome, Safari, Opera */
+    animation-delay: .65s;
+
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+
+}
+
+/* Mobile nav  */
+/* http://slicknav.com/ */
+/*
+    Mobile Menu Core Style
+*/
+
+
+.slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
+.slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
+.slicknav_menu .slicknav_no-text { margin: 0 }
+.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 1px #333; -moz-box-shadow: 0 1px 1px #333; box-shadow: 0 1px 1px #333; }
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
+.slicknav_nav { clear: both }
+.slicknav_nav ul,
+.slicknav_nav li { display: block }
+.slicknav_nav .slicknav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em; }
+.slicknav_nav .slicknav_item { cursor: pointer; }
+.slicknav_nav .slicknav_row { display: block; }
+.slicknav_nav a { display: block }
+.slicknav_nav .slicknav_item a,
+.slicknav_nav .slicknav_parent-link a { display: inline }
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+
+/* Switch menus */
+
+.slicknav_menu {
+	display:none;
+}
+
+
+/* ***** MOBILE NAV AT... ****** */
+
+@media screen and (max-width: em(780)) {
+	/* #menu is the original menu */
+	.js #menu {
+		display:none;
+	}
+
+	.js .slicknav_menu {
+		display:block;
+	}
+}
+
+/* Mobile nav styling */
+
+// .slicknav_menu {
+// 	background: #FFF;
+// 	padding: 4px;
+// }
+
+.slicknav_btn {  display: block; vertical-align: middle; padding: 0.438em 0.625em 0.438em 0.625em; line-height: 1.125em; cursor: pointer; }
+
+.slicknav_btn {
+	padding: em(6);
+	background: $eia-blue;
+	color: #FFF;
+	font-weight: bold;
+	border-radius: 2px;
+	position: absolute;
+	right: 12px;
+	top: 18px;
+	z-index:11;
+
+	&:hover {
+		color: #FFF;
+	}
+}
+
+
+.slicknav_btn.slicknav_open {
+	margin-bottom: 5px;
+}
+
+.slicknav_menutxt {
+text-shadow: 0 1px 1px #333;
+}
+
+.slicknav_icon-bar {
+  background-color: #f5f5f5;
+}
+
+
+/* Menu items */
+ul.slicknav_nav {
+
+	@extend %naked-list;
+	border-top: 1px #CCC dotted;
+	margin-bottom: 15px;
+	margin-top: 70px;
+
+	li {
+
+		a {
+			display: block;
+			padding: em(12) 5%;
+			border-bottom: 1px #CCC dotted;
+			font-weight: bold;
+
+
+			&:hover {
+				background: $eia-blue;
+				color: #FFF;
+				text-shadow: 0 1px 1px #333;
+
+			}
+
+		}
+
+
+	}
+
+
+}

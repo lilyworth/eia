@@ -1,0 +1,33 @@
+
+
+
+
+.description {
+
+/* ------------------------------------------- */
+
+	color: #FFF;
+	
+	h1 {
+		@include text-shadow(rgba(#111, 0.8) 1px 1px 2px);
+	}
+
+	@include breakpoint(emCalc(741)){
+
+		@include grid-span(8,3);
+		margin-top: emCalc(35);
+		
+		h1 {
+			width:60%;
+		}
+		
+	}
+	
+	
+/* ------------------------------------------- */	
+}
+
+
+
+
+

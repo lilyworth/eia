@@ -1,0 +1,87 @@
+/* .positionfixed,
+.iospositionfixed {
+
+	.wrapper--cookie-notice {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		height: 68px;
+	}
+
+} */
+
+.cookie-notice {
+  padding: 20px 0;
+  position: relative;
+  background: #FFF;
+  z-index: 11;
+  border-bottom: 2px #CCC solid;
+}
+
+.cookie-text {
+	text-align: center;
+
+	@include grid-span(12);
+
+	@include breakpoint(em(850)){
+		@include grid-span(7);
+		text-align: left;
+
+	}
+
+
+
+	@include breakpoint(em(955)){
+		@include grid-span(8);
+	}
+
+a {
+  text-decoration: underline;
+}
+
+	p {
+		line-height: 150%;
+    margin-bottom: 0;
+
+
+	}
+
+
+}
+
+
+.cookie-button {
+
+   button {
+     @include button($eia-blue);
+   }
+
+	@include grid-span(12);
+	text-align: center;
+
+
+
+	@include breakpoint(em(850)){
+		text-align: left;
+		@include grid-span(5,8);
+
+	}
+
+	@include breakpoint(em(955)){
+		@include grid-span(4,9);
+	}
+
+
+
+	button {
+		margin: 0 auto;
+
+
+		@include breakpoint(em(850)){
+			float:right;
+		}
+
+	}
+
+
+}

@@ -1,0 +1,550 @@
+/* Form elements
+========================================= */
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; }
+
+
+input,textarea {
+	background: #FFF;
+	border: 2px #CCC solid;
+	color: #333;
+	padding: 8px;
+	font-size: emCalc(14);
+	border-radius: 4px;
+
+
+	&:focus {
+		background: #FFF;
+	}
+
+}
+
+
+/* Place selects inside a div.slect and add basic css style */
+.select select {
+   background: #666;
+   color: #A7A7A7;
+   width: 268px;
+   padding: 15px;
+   font-size: emCalc(14);
+   border: 0;
+   border-radius: 0;
+   /* height: 34px; */
+   -webkit-appearance: none;
+   }
+
+/* Gravity forms */
+
+.gform_previous_button {
+	background: #FFF;
+	color: $eia-blue;
+	text-shadow: none;
+
+	&:hover {
+		background: $eia-blue;
+		color: #FFF;
+	}
+
+}
+
+.gform_fields {
+	@extend %naked-list;
+}
+
+.ginput_container {
+	margin-bottom: $space;
+}
+
+/* -- Donate form */
+/* Regular giving */
+.gf_page_steps {
+
+display: none;
+@include breakpoint(380px){
+			display: block;
+	}
+
+margin-bottom: $space;
+font-size: $font-small;
+
+	@include breakpoint(em(1000)){
+		position: absolute;
+		top:-35px;
+		right:0;
+	}
+
+}
+
+.gf_step_number {
+	&:after {
+		content: ".";
+	}
+}
+
+.gf_step_active {
+	font-weight: bold;
+}
+
+.gf_step {
+	display: inline-block;
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+}
+
+
+.dd-details {
+
+	border:3px #111 solid;
+	font-size: $font-small;
+	background-color: #fff;
+padding: 20px;
+
+	ul {
+		list-style: disc;
+	}
+
+	&__header {
+	padding: 80px 20px 20px;
+	margin-bottom: 20px;
+	height: 70px;
+	background-image: url('../img/dd-logo.png');
+	background-size: 125px auto;
+	background-repeat: no-repeat;
+		background-position: center 20px;
+	@include breakpoint(em(600)){
+	padding: 0;
+	margin-bottom: 0;
+		background-position: 98% 0;
+	}
+
+
+
+
+		h4 {
+
+			text-align: center;
+			font-size: $font-regular;
+			font-weight: normal;
+			@include breakpoint(em(600)){
+				padding-top: 16px;
+			}
+		}
+
+	}
+
+
+/* 	&__logo {
+	width: 125px;
+	height: auto;
+	@include breakpoint(em(600)){
+		float: right;
+	}
+
+}
+ */
+}
+
+
+.dd-details-extras {
+	margin-top: $space*2;
+	font-size: $font-small;
+}
+// end dd-details
+/* --------------------------------------------------- */
+
+/* End regular */
+
+
+
+.gfield_checkbox {
+	@extend %naked-list;
+}
+
+
+/* Postcode lookup */
+.postcode_lookup {
+
+	button {
+		@include button;
+		margin-left: 20px;
+	}
+
+	select {
+		display: block;
+		margin-top: $space;
+		max-width: 300px;
+		@include breakpoint(em(800)) {
+			max-width:none;
+		}
+
+	}
+
+
+}
+
+
+.dd-confirmation {
+	@extend %naked-list;
+	padding-top: $space;
+	padding-bottom: $space;
+	margin-bottom: $space;
+	border-bottom: 1px #CCC dotted;
+	border-top: 1px #CCC dotted;
+}
+
+/* Confirmation table */
+/* .tab-content--regular{
+
+	table {
+		padding: 10px;
+		background: #FFF !important;
+	}
+
+	td[style]{
+		@extend %header;
+		font-size: $font-large !important;
+		background: #FFF !important;
+		padding: 40px 10px 15px 10px !important;
+		}
+
+
+
+	td {
+
+		padding: 10px;
+		margin-bottom: 10px;
+
+		.bulleted {
+			@extend %naked-list;
+		}
+
+		font {
+			font-size: $font-regular !important;
+		}
+
+	}
+
+	tr {
+		background: #FFF;
+		border-bottom: 1px #EEE solid;
+	}
+
+}
+ */
+
+
+
+.ginput_container {
+	/* --------------------------------------------------- */
+	margin-bottom: 0;
+
+	input:not([type='checkbox']) {
+		width: 70%;
+		@include breakpoint(em(500)){
+			width: 50%;
+		}
+
+	}
+
+	select {
+		width: 150px
+	}
+
+
+
+
+	.regular-amount & {
+
+	 input {	font-size: emCalc(26);
+		font-weight: bold;
+		color: $eia-blue;
+		width: 235px;
+		padding: 15px;
+		}
+
+
+	}
+
+	/* --------------------------------------------------- */
+
+}
+
+.regular-amount {
+	label {
+		@extend %visuallyhidden;
+	}
+}
+
+
+
+.ginput_complex {
+
+	[class*='ginput_']{
+		margin-bottom: 8px;
+		display: block;
+
+	label {
+		font-size: $font-small;
+		color: #666
+	}
+
+	}
+
+
+}
+
+.gfield_required {
+	position: relative;
+	left: 5px;
+	color:$eia-blue;
+}
+
+[class*="ajax_spinner"]{
+	position: relative;
+	left:15px;
+}
+
+.tab-content--regular {
+
+	.donation-amounts + span + input {
+		margin-bottom: $space;
+	}
+
+
+
+}
+
+/* Hide email updates title/label */
+.newsletter-signup > label  {
+	@extend %visuallyhidden;
+}
+
+
+
+/* end regular giving */
+
+.gsection {
+	border-top: 1px #CCC dotted;
+	padding-top: $space;
+
+	&:first-child {
+		border-top: 0;
+		padding-top: 0;
+	}
+
+}
+
+.gsection_title {
+	margin-bottom: 2px;
+}
+
+
+
+.gfield_description,
+.gsection_description {
+	font-size: 12px;
+	color: #666;
+}
+
+.validation_message {
+	color: $orange;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.validation_message--check-form {
+	padding: $space;
+	background: #FFF;
+	margin-bottom: $space;
+}
+
+.gfield {
+	margin-bottom: $space;
+}
+
+li[class*='confirm-']{
+
+	> label {
+		margin-bottom: 8px;
+		padding-bottom: 8px;
+		border-bottom: 1px #CCC dotted;
+		display: block;
+	}
+
+	 li[class*="gchoice_"] label {
+		font-size: $font-small;
+	}
+
+}
+
+
+/* Comments */
+
+/*
+textarea {
+	width: 80%;
+}
+*/
+
+// Subscribe form
+
+form[action*='list-manage.com']{
+
+padding:$space;
+background: rgba(255,255,255,0.5);
+
+
+label {
+	display:block;
+	margin-bottom: 4px;
+
+	span {
+		color: #c00;
+	}
+}
+
+input {
+	margin-bottom: $space/2;
+}
+
+
+#{$all-text-inputs} {
+  width: 100%;
+  @include breakpoint(em(500)){
+		width: 80%;
+	}
+}
+
+
+[type='submit']{
+	@include button;
+}
+
+}
+
+
+.indicates-required {
+	font-size: 11px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.asterisk {
+	color: #C00;
+}
+
+/* -- Mailchinp specific */
+.mc-field-group {
+
+	strong {
+		display: block;
+		margin: 20px 0 10px 0;
+	}
+
+	ul {
+		@extend %naked-list;
+		margin-bottom: 35px;
+		label {
+			display: inline-block;
+			margin-left: 10px;
+			position: relative;
+			top:1px;
+		}
+
+	}
+
+}
+
+/* ----- Search form */
+
+// Desktop/header search bar
+[role='banner'] form[role="search"] {
+	position: relative;
+	float:right;
+
+	width: 135px;
+	display:none;
+
+	@include breakpoint($breakpoint--mobile-nav){
+				display: block;
+		}
+
+	@include breakpoint(em(755)){
+		width:190px;
+	}
+
+}
+
+// Mobile search
+
+
+
+.mobile-search {
+	position:relative;
+	margin: 20px 20px 35px 20px;
+	display:none;
+}
+
+/* Nav open */
+.slicknav_open + .slicknav_nav + .mobile-search {
+	display:block;
+}
+
+form[role="search"] {
+
+	> div {
+		position: relative;
+		width: 100%;
+	}
+
+	input {
+		width: 100%;
+		padding: 8px 36px 8px 8px;
+		-moz-box-sizing: inherit; -webkit-box-sizing: inherit; box-sizing: inherit;
+
+		&:hover + button,
+		&:focus + button {
+			color: $eia-blue;
+		}
+
+	}
+
+	button {
+		background: transparent;
+		border:0;
+		position: absolute;
+		top:6px;
+		right:3px;
+		color: #666;
+
+		&:hover {
+			color: $eia-blue;
+		}
+
+	}
+
+}
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+
+}

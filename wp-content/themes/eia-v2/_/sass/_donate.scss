@@ -1,0 +1,431 @@
+$breakpoint--donate: 830;
+// Where we switch to small screen view + stack up
+
+.donate {
+/* ------------------------------------------- */
+
+
+	a {
+		@include button($bg: $eia-blue);
+	}
+
+/* ------------------------------------------- */
+}
+
+
+// Special layout rules for Donate
+
+.page-template-donate-php.page main {
+
+/* ------------------------------------------- */
+
+	> section {
+
+		@include grid-span(12);
+
+		/* resize sidebar  */
+		@include breakpoint(em($breakpoint--donate)){
+				@include grid-span(8);
+		}
+
+		/* go full-size */
+		// @include breakpoint(emCalc(1010)){
+		// 		@include grid-span(9);
+		// }
+
+	}
+
+/* ------------------------------------------- */
+
+} // main
+
+
+.page-template-donate-php.page .sidebar {
+/* ------------------------------------------- */
+
+	@include grid-span(12);
+
+	@include breakpoint(emCalc($breakpoint--donate)){
+		@include grid-span(4,9);
+	}
+
+
+	// @include breakpoint(emCalc(1010)){
+	// 	@include grid-span(3,10);
+	// }
+
+
+
+/* ------------------------------------------- */
+}
+
+
+
+// Hide donate sidebar on actual donate page
+.page-template-donate-php .donate__sidebar {
+	display: none;
+}
+
+
+article.donate-forms {
+	padding-bottom: 30px;
+	border-bottom: 1px #CCC solid;
+
+	margin-bottom: 35px;
+	@include breakpoint(em(700)){
+		margin-bottom: 60px;
+	}
+}
+
+.donate__sidebar {
+		text-align: center;
+		margin-bottom: em(25);
+
+		a {
+			margin: 0 auto;
+		}
+
+}
+
+
+.form-info {
+
+	display: none;
+	@include breakpoint(em(965)){
+		display: block;
+	}
+
+	float: right;
+
+	ol {
+
+
+		li {
+			float: left;
+			color: #999;
+			margin-right: 15px;
+			padding-right: 15px;
+			margin-bottom: 0;
+			font-size: emCalc(12);
+			&.current {
+				color: #666;
+				font-weight: bold;
+			}
+
+		}
+
+	}
+
+}
+
+.donation-amounts {
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		padding: 6px 8px;
+		margin-right: 12px;
+		color: #FFF;
+		background: $eia-blue;
+		@include border-radius(4px);
+		font-weight: bold;
+		font-size: emCalc(26);
+		cursor: pointer;
+
+		&:hover {
+			background: $eia-blue-light;
+		}
+
+	}
+
+}
+
+.donate-pound {
+	font-size: emCalc(26);
+	font-weight: bold;
+	color: #666;
+	margin-right: 5px;
+}
+
+#inputamount {
+	font-size: emCalc(26);
+	font-weight: bold;
+	color: $eia-blue;
+	width: 235px;
+	padding: 15px;
+
+}
+
+
+/* Donate Forms */
+/* Single */
+
+form.single,
+form.regular {
+
+	@extend %clearfix;
+
+	label {
+		display: block;
+		margin-bottom: 4px;
+
+
+		@include breakpoint(emCalc(700)){
+			float:left;
+			width: 180px;
+			position: relative;
+			top:8px;
+
+		}
+
+
+
+	}
+
+
+
+
+
+	fieldset {
+
+
+		> div {
+			margin-bottom: 12px;
+			@extend %clearfix;
+
+			input {
+				float: left;
+				width: 45%;
+			}
+
+		}
+
+		padding: 20px 0;
+		margin: 20px 0;
+		border-top: 1px #CCC dotted;
+		border-bottom: 0;
+		border-left: 0;
+		border-right: 0;
+
+	}
+
+
+	button {
+		@include button;
+
+		@include breakpoint(emCalc(700)){
+			margin-left: 180px;	 /* width of labels */
+			}
+
+	}
+
+
+}
+
+
+
+
+
+/* Sidebar */
+.donate-examples__item {
+
+	padding-bottom: emCalc(20);
+	border-bottom: 1px #CCC dotted;
+	margin-bottom: emCalc(20);
+	@extend %clearfix;
+
+
+
+	p {
+		margin: 0;
+		font-size: em(14);
+	}
+
+	&__header {
+	position: relative;
+
+		img {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		&__title {
+		position: absolute;
+		left:10px;
+		bottom:10px;
+		margin: 0;
+		padding: 5px;
+		background: #111;
+		background: rgba(0,0,0,0.5);
+		@include border-radius(3px);
+		color: #FFF;
+		font-size:emCalc(24);
+
+		}
+
+
+	}
+
+
+
+}
+
+/* Donate Quick */
+
+// Hide / show on screen sizes
+main > section .donate-quick {
+margin: $space 0;
+padding: $space 0;
+border-top: 1px #CCC dotted;
+border-bottom: 1px #CCC dotted;
+@include breakpoint(em($breakpoint--donate)){
+			display: none;
+	}
+}
+
+.sidebar .donate-quick {
+	display:none;
+@include breakpoint(em($breakpoint--donate)){
+			display: block;
+	}
+
+}
+
+
+/* Other ways area */
+
+
+.other-ways {
+	ul {
+		@extend %naked-list;
+	}
+}
+
+.other-ways h2
+ {
+	margin-bottom: $space/2;
+}
+
+.other-ways h3 {
+	margin-bottom: em(5);
+}
+
+
+.other-ways {
+
+
+	.button {
+		font-size: em(14);
+	}
+
+}
+
+/* other ways list in main page */
+
+main section .other-ways > ul {
+		@include block-grid(1);
+
+		li {
+			@include breakpoint(max-width em(700)){
+			margin-bottom: $space/2;
+			padding-bottom: $space/2;
+			border-bottom: 1px #CCC dotted;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			}
+		}
+
+		@include breakpoint(em(700)){
+			@include block-grid(3);
+		}
+	}
+
+
+/* other ways list in sidebar */
+.sidebar {
+	.other-ways{
+
+		margin-bottom: $space;
+
+		h2 {
+			font-size: em(20);
+			margin-bottom: $space/2;
+		}
+
+		> ul {
+			@extend %naked-list;
+		}
+
+		li {
+			margin-bottom: $space/2;
+			padding-bottom: $space/2;
+			border-bottom: 1px #CCC dotted;
+		}
+
+		p {
+			margin-bottom: $space/2;
+		}
+
+	}
+}
+
+
+.donate-paypal .button {
+	@include button($eia-blue);
+	margin-bottom: $space/2;
+}
+
+
+.other-ways--intro {
+	padding: em(25) 0;
+	margin-bottom: em(25);
+	border-top: 1px #CCC dotted;
+	border-bottom: 1px #CCC dotted;
+}
+
+/* Secure trading logo */
+	.form-intro-logo{
+		border: 10px #FFF solid;
+		border-radius: 4px;
+		display: none;
+
+		@include breakpoint(780px){
+			display: inline;
+			}
+	}
+
+.continue-note {
+	@include breakpoint(700px){
+	margin-left: 24%;
+	}
+	margin-top: $space;
+
+	img {
+		background: #FFF;
+		border: 10px #FFF solid;
+		border-radius: 4px;
+	}
+
+}
+
+
+/* Thank you page */
+
+.page-template-page-donate-thank-you-php {
+
+	.info {
+
+	}
+
+	.video {
+		margin-bottom: $space;
+		padding-bottom: $space;
+		border-bottom: 1px #CCC dotted;
+	}
+
+}

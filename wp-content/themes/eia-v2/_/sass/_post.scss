@@ -1,0 +1,50 @@
+/* Single blog post */
+
+.single {
+
+	time {
+		display: block;
+		font-size: emCalc(14);
+		margin: 10px 0;
+		color: #999;
+	}
+
+}
+
+
+.featured-image {
+	float:right;
+	margin: 25px;
+}
+
+.post-tags {
+	font-size: emCalc(14);
+	line-height: 150%;
+	border-top: 1px #CCC solid;
+	border-bottom: 1px #CCC solid;
+	padding: 20px 0;
+	clear: both;
+}
+
+
+.wp-caption-text {
+	font-size: emCalc(14);
+	color: #666;
+}
+
+.wp-caption.aligncenter {
+	text-align: center;
+}
+
+.aligncenter {
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+// override inline styles added on captions
+@include breakpoint(max-width 460px){
+	.wp-caption {
+			width: auto !important;
+		}
+	}
